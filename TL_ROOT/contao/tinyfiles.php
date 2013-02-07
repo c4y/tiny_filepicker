@@ -6,11 +6,6 @@
 
     define('TL_MODE', 'BE');
     require_once '../system/initialize.php';
-    $current = $_SESSION['BE_DATA']['referer']['current'];
-    preg_match('/id=[0-9]+/', $current, $treffer);
-    $id = substr($treffer[0], 3);
-    preg_match('/table=.*id/', $current, $treffer);
-    $table = substr($treffer[0], 6, -3);
 ?>
 
 <!DOCTYPE HTML>
@@ -46,7 +41,7 @@
 
 <h1>Dateiverwaltung</h1>
 
-<iframe style="border:none;" name="simple-iframe" width="100%" height="500" src="file.php?do=article&table=<?php echo $table; ?>&field=singleSRC&act=show&id=<?php echo $id; ?>&rt=<?php echo $_SESSION["REQUEST_TOKEN"]; ?>">kein iframe</iframe>
+<iframe style="border:none;" name="simple-iframe" width="100%" height="500" src="file.php?table=tl_filepicker&field=singleSRC&act=show&id=0&rt=<?php echo $_SESSION["REQUEST_TOKEN"]; ?>">kein iframe</iframe>
 
 <div id="footer">
 
